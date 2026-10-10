@@ -1,0 +1,65 @@
+{
+  "name": "@unifapi/email-filter",
+  "version": "1.0.0",
+  "description": "Detect free email domains (Gmail, Yahoo, Outlook and 4,768 more) and split business from personal email addresses. The free email provider list HubSpot forms block, with role-mailbox and syntax checks. Zero dependencies, Node and browser. By UnifAPI.",
+  "keywords": [
+    "b2b",
+    "business-email",
+    "email-domains",
+    "email-filter",
+    "email-validation",
+    "free-email-domains",
+    "free-email-providers",
+    "hubspot",
+    "lead-qualification",
+    "personal-email",
+    "role-account",
+    "unifapi",
+    "work-email"
+  ],
+  "homepage": "https://unifapi.com/apis/email",
+  "bugs": {
+    "url": "https://github.com/unifapi-agent/email-filter/issues"
+  },
+  "license": "MIT",
+  "author": "UnifAPI <hello@unifapi.com> (https://unifapi.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unifapi-agent/email-filter.git"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./free-email-domains.json": "./data/free-email-domains.json",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
